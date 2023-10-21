@@ -113,8 +113,8 @@
         const montagem = parseFloat(document.getElementById("montagem").value) || 0;
 
 
-        const tempoTotal = horas + montagem/60.0 + 60.0/distancia
-        const custoDeslocamento = distancia/10.0 * gasolina * 2
+        const tempoTotal = horas + montagem/60.0 + distancia/30.0;
+        const custoDeslocamento = distancia/10.0 * gasolina * 2;
 
         const lucro = (cache * horas - equipamento - custoDeslocamento);
         const lucroPorHora = lucro / tempoTotal;
