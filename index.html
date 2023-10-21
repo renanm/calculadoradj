@@ -7,7 +7,10 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      background-image: url("fundo.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: #010102;
     }
     .container {
       width: 90%;
@@ -121,11 +124,11 @@
         console.log(lucro);
         console.log(lucroPorHora);
 
-
         document.getElementById("result").innerHTML = `
           Lucro do DJ: R$ ${lucro.toFixed(2)} <br>
           Lucro por hora: R$ ${lucroPorHora.toFixed(2)} <br>
         `;
+
       });
     });
   </script>
