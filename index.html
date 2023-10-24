@@ -74,19 +74,19 @@
     <h1>Calculadora de Custo para DJ</h1>
     <form id="dj-cost-form">
       <label for="cache">Cachê do DJ por hora (R$):</label>
-      <input type="number" id="cache" name="cache" min="0"><br>
+      <input type="number" id="cache" name="cache" min="0" step=".01"><br>
 
       <label for="horas">Horas de apresentação:</label>
       <input type="number" id="horas" name="horas" min="1" max="10"><br>
 
       <label for="equipamento">Custo do equipamento (R$):</label>
-      <input type="number" id="equipamento" name="equipamento" min="0"><br>
+      <input type="number" id="equipamento" name="equipamento" min="0" step=".01"><br>
 
       <label for="distancia">Distância (km):</label>
       <input type="number" id="distancia" name="distancia" min="0"><br>
 
       <label for="gasolina">Preço da gasolina (R$ por litro - <small>arredondar para cima</small>):</label>
-      <input type="number" id="gasolina" name="gasolina" min="0"><br>
+      <input type="number" id="gasolina" name="gasolina" min="0" step=".01"><br>
 
       <label for="montagem">Tempo total para preparar e desmontar equipamento (minutos):</label>
       <input type="number" id="montagem" name="montagem" min="0" placeholder="30"><br>
