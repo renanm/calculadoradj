@@ -127,17 +127,17 @@
         console.log("tempoTotal = %f + %f/60.0 + %f/30.0", horas, montagem, distancia);
         console.log("tempoTotal = %f horas", tempoTotal);
         const custoDeslocamento = 0.2 * distancia * gasolina;
-        console.log();
+        console.log("");
         console.log("custoDeslocamento = 0.2 * distancia * gasolina");
         console.log("custoDeslocamento = 0.2 * %f * %f", distancia, gasolina);
         console.log("custoDeslocamento = %f reais", custoDeslocamento)
         const lucro = cache * horas - equipamento - custoDeslocamento;
-        console.log();
+        console.log("");
         console.log("lucro = cache * horas - equipamento - custoDeslocamento       <-- POLINÔMIO");
         console.log("lucro = %f * %f - %f - %f", cache, horas, equipamento, custoDeslocamento);
         console.log("lucro = %f reais", lucro);
         const lucroPorHora = lucro / tempoTotal;
-        console.log();
+        console.log("");
         console.log("lucroPorHora = lucro / tempoTotal");
         console.log("lucroPorHora = %f / %f", lucro, tempoTotal);
         console.log("lucroPorHora = %f reais", lucroPorHora);
