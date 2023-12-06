@@ -22,7 +22,6 @@
       background-color: rgba(245, 245, 245, 0.9);
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
-
     h1 {
       color: #333;
       text-align: center;
@@ -67,7 +66,6 @@
       padding: 8px;
     }
 
-
     @media only screen and (max-width: 1024px) {
       .container {
         max-width: 70%;
@@ -102,10 +100,9 @@
       <input type="number" id="gasolina" name="gasolina" min="0" step=".01"><br>
 
       <label for="montagem">Tempo total para preparar e desmontar equipamento (minutos):</label>
-      <input type="number" id="montagem" name="montagem" min="0" placeholder="30"><br>
+      <input type="number" id="montagem" name="montagem" min="0" placeholder="30" value="30"><br>
 
       <p><small>Deixe em branco os campos em que não há custos.</small></p>
-
       <input type="submit" value="Calcular">
     </form>
     <div id="result"></div>
@@ -125,18 +122,25 @@
         const gasolina = parseFloat(document.getElementById("gasolina").value) || 0;
         const montagem = parseFloat(document.getElementById("montagem").value) || 0;
 
-
         const tempoTotal = horas + montagem/60.0 + distancia/30.0;
-        const custoDeslocamento = distancia/10.0 * gasolina * 2;
-
-        const lucro = (cache * horas - equipamento - custoDeslocamento);
+        console.log("tempoTotal = horas + montagem/60.0 + distancia/30.0");
+        console.log("tempoTotal = %f + %f/60.0 + %f/30.0", horas, montagem, distancia);
+        console.log("tempoTotal = %f horas", tempoTotal);
+        const custoDeslocamento = 0.2 * distancia * gasolina;
+        console.log();
+        console.log("custoDeslocamento = 0.2 * distancia * gasolina");
+        console.log("custoDeslocamento = 0.2 * %f * %f", distancia, gasolina);
+        console.log("custoDeslocamento = %f reais", custoDeslocamento)
+        const lucro = cache * horas - equipamento - custoDeslocamento;
+        console.log();
+        console.log("lucro = cache * horas - equipamento - custoDeslocamento       <-- POLINÔMIO");
+        console.log("lucro = %f * %f - %f - %f", cache, horas, equipamento, custoDeslocamento);
+        console.log("lucro = %f reais", lucro);
         const lucroPorHora = lucro / tempoTotal;
-
-        console.log(tempoTotal);
-        console.log(custoDeslocamento);
-        console.log(lucro);
-        console.log(lucroPorHora);
-
+        console.log();
+        console.log("lucroPorHora = lucro / tempoTotal");
+        console.log("lucroPorHora = %f / %f", lucro, tempoTotal);
+        console.log("lucroPorHora = %f reais", lucroPorHora);
         document.getElementById("result").innerHTML = `
           <p>Lucro do DJ: <b>R$ ${lucro.toFixed(2)}</b> <br>
           Lucro por hora: <b>R$ ${lucroPorHora.toFixed(2)}</b> <br></p>
